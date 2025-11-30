@@ -6,6 +6,8 @@ import Lead_image from './assets/Images/Lead_Image.jpeg';
 import VC_image from './assets/Images/VC_Image.jpeg';
 import Enlivo_logo from './assets/Images/Enlivo_logo.png';
 import Enlivologo from './assets/Images/EnlivoLogo.png';
+import Akshay_image from './assets/Images/Akshay_image.jpeg';
+import Diksha_image from './assets/Images/Diksha_image.jpeg';
 import { 
   Code, 
   Cpu, 
@@ -123,6 +125,21 @@ const TESTIMONIALS = [
   }
 ];
 
+const FOUNDERS = [
+    {
+      name: "Akshay K",
+      title: "Co-Founder & CEO",
+      bio: "Akshay leads Enlivo’s strategic direction, focusing on market growth and investor relations. His expertise lies in scaling technology companies from seed to Series A. He believes technology must serve a clear purpose to drive measurable business outcomes",
+      image: Akshay_image,
+    },
+    {
+      name: "Diksha Agrawal",
+      title: "Co-Founder & COO",
+      bio: "Diksha drives the operational backbone of Enlivo, ensuring every project, partnership, and process runs with precision. With deep expertise in business operations and delivery management, she transforms strategy into execution and keeps our teams aligned, efficient, and unstoppable",
+      image: Diksha_image,
+    },
+  ];
+
 // --- Components ---
 
 const Navbar = ({ isScrolled, setIsMobileMenuOpen, isMobileMenuOpen, currentPage, setPage }) => (
@@ -150,6 +167,7 @@ const Navbar = ({ isScrolled, setIsMobileMenuOpen, isMobileMenuOpen, currentPage
         <div className="hidden lg:flex items-center space-x-1">
           {[
             { id: 'home', label: 'Home' },
+            { id: 'aboutus', label: 'About Us' },
             { id: 'digital', label: 'Digital' },
             { id: 'enterprise', label: 'Enterprise' },
             { id: 'ai', label: 'AI & Automation' },
@@ -190,6 +208,7 @@ const Navbar = ({ isScrolled, setIsMobileMenuOpen, isMobileMenuOpen, currentPage
       <div className="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl pt-32 px-8 overflow-y-auto">
         <div className="flex flex-col space-y-6 text-xl font-bold text-white">
           <button onClick={() => { setPage('home'); setIsMobileMenuOpen(false); }} className="text-left hover:text-indigo-400">Home</button>
+          <button onClick={() => { setPage('aboutus'); setIsMobileMenuOpen(false); }} className="text-left hover:text-indigo-400">About Us</button>
           <button onClick={() => { setPage('digital'); setIsMobileMenuOpen(false); }} className="text-left hover:text-indigo-400">Digital Experiences</button>
           <button onClick={() => { setPage('enterprise'); setIsMobileMenuOpen(false); }} className="text-left hover:text-indigo-400">Enterprise Systems</button>
           <button onClick={() => { setPage('ai'); setIsMobileMenuOpen(false); }} className="text-left hover:text-indigo-400">AI & Automation</button>
@@ -349,6 +368,48 @@ const DigitalExperiencePage = () => (
     </div>
   </div>
 );
+
+const AboutUsPage = () => (
+        <div className="pt-32 pb-20 bg-slate-950 min-h-screen">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Company Description */}
+            <div className="text-center max-w-4xl mx-auto mb-20">
+              <h1 className="text-5xl font-bold text-white mb-6">Our Mission & <span className="text-indigo-500">Vision</span></h1>
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                Enlivo Technologies was founded on the principle that the most challenging business problems require novel and intelligent engineering solutions. We specialize in building custom, scalable enterprise software powered by proprietary AI/ML models. Our commitment extends beyond code; we are dedicated to cultivating the next generation of elite technology talent through rigorous internship and training programs. We aim to be the digital backbone for ambitious companies worldwide.
+              </p>
+              <div className="flex justify-center gap-6 text-slate-400">
+                <span className="flex items-center"><Zap className="w-5 h-5 text-indigo-400 mr-2" /> Innovation</span>
+                <span className="flex items-center"><Award className="w-5 h-5 text-indigo-400 mr-2" /> Excellence</span>
+                <span className="flex items-center"><Database className="w-5 h-5 text-indigo-400 mr-2" /> Scale</span>
+              </div>
+            </div>
+    
+            {/* Founder Profiles */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-white text-center mb-12">Meet Our Founders</h2>
+              <div className="grid md:grid-cols-2 gap-12">
+                {FOUNDERS.map((founder, index) => (
+                  <div key={index} className="glass-card p-8 rounded-2xl flex flex-col items-center text-center">
+                    <div className="relative mb-6">
+                      <div className="absolute -inset-1 bg-indigo-500/30 rounded-full blur-md"></div>
+                      <img 
+                        src={founder.image} 
+                        alt={founder.name} 
+                        className="w-32 h-32 rounded-full object-cover relative border-4 border-slate-800/50"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-1">{founder.name}</h3>
+                    <p className="text-indigo-400 font-semibold mb-4">{founder.title}</p>
+                    <p className="text-slate-400 text-base leading-relaxed">{founder.bio}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+    );
 
 const EnterpriseSystemPage = () => (
   <div className="pt-32 pb-20 bg-slate-950 min-h-screen">
@@ -894,8 +955,9 @@ const Footer = ({ setPage }) => {
         <div>
           <h4 className="text-white font-bold mb-6">Company</h4>
           <ul className="space-y-4 text-sm">
+              <li><button onClick={() => setPage('aboutus')} className="hover:text-indigo-400 transition-colors">About Us</button></li>
              <li><button onClick={() => setPage('contact')} className="hover:text-indigo-400 transition-colors">Contact Us</button></li>
-             <li><button className="hover:text-indigo-400 transition-colors">Careers</button></li>
+{/*              <li><button className="hover:text-indigo-400 transition-colors">Careers</button></li> */}
              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hello@enlivo.com</li>
              <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Bengaluru, India</li>
           </ul>
@@ -984,6 +1046,7 @@ export default function App() {
         )}
         
         {currentPage === 'digital' && <DigitalExperiencePage />}
+        {currentPage === 'aboutus' && <AboutUsPage />}
         {currentPage === 'enterprise' && <EnterpriseSystemPage />}
         {currentPage === 'ai' && <AIAutomationPage />}
         {/* UPDATED: Pass setPage to InternshipPage */}
