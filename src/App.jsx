@@ -8,6 +8,10 @@ import Enlivo_logo from './assets/Images/Enlivo_logo.png';
 import Enlivologo from './assets/Images/EnlivoLogo.png';
 import Akshay_image from './assets/Images/Akshay_image.jpeg';
 import Diksha_image from './assets/Images/Diksha_image.jpeg';
+import Digital_image from './assets/Images/Digital.avif';
+import Internship_image from './assets/Images/Internship.avif';
+import Digital_image1 from './assets/Images/Digital-image1.jpg';
+import Digital_image2 from './assets/Images/digital-image2.jpg';
 import { 
   Code, 
   Cpu, 
@@ -128,19 +132,23 @@ const TESTIMONIALS = [
 const FOUNDERS = [
     {
       name: "Akshay K",
-      title: "Co-Founder & CEO",
+      title: "Founder & CEO",
       bio: "Akshay leads Enlivo’s strategic direction, focusing on market growth and investor relations. His expertise lies in scaling technology companies from seed to Series A. He believes technology must serve a clear purpose to drive measurable business outcomes",
       image: Akshay_image,
     },
     {
-      name: "Diksha Agrawal",
-      title: "Co-Founder & COO",
+      name: "Dr. Diksha Agrawal",
+      title: "Founder & COO",
       bio: "Diksha drives the operational backbone of Enlivo, ensuring every project, partnership, and process runs with precision. With deep expertise in business operations and delivery management, she transforms strategy into execution and keeps our teams aligned, efficient, and unstoppable",
       image: Diksha_image,
     },
   ];
 
 // --- Components ---
+// useEffect(() => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// }, [currentPage]);
+
 
 const Navbar = ({ isScrolled, setIsMobileMenuOpen, isMobileMenuOpen, currentPage, setPage }) => (
   <>
@@ -344,30 +352,309 @@ const ServiceAbstract = ({ setPage }) => (
 // --- NEW DETAILED PAGES ---
 
 const DigitalExperiencePage = () => (
-  <div className="pt-32 pb-20 bg-slate-950 min-h-screen">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div>
-          <h1 className="text-5xl font-bold text-white mb-6">Immersive Digital <span className="text-indigo-500">Experiences</span></h1>
-          <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-            We don't just build websites; we create digital ecosystems. From high-converting landing pages to complex Progressive Web Apps (PWAs), our focus is on speed, accessibility, and aesthetic perfection.
-          </p>
-          <ul className="space-y-4 mb-8">
-            {['React & Next.js Frameworks', '3D WebGL Interactions', 'Headless CMS Integration', 'SEO & Performance Optimization'].map(item => (
-              <li key={item} className="flex items-center text-slate-300">
-                <CheckCircle className="w-5 h-5 text-indigo-500 mr-3" /> {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&q=80&w=1000" alt="Digital Dashboard" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-indigo-500/10 mix-blend-overlay"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div className="pt-32 pb-20 bg-slate-950 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+      {/* 1️⃣ HERO – IMMERSIVE DIGITAL EXPERIENCES */}
+      <section className="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 className="text-5xl font-bold text-white mb-6">
+            Immersive Digital <span className="text-indigo-500">Experiences</span>
+          </h1>
+
+          <p className="text-xl text-slate-300 mb-4 leading-relaxed">
+            We design and build digital experiences that feel effortless, perform
+            brilliantly, and tell your brand story with clarity. From first scroll
+            to final conversion, every interaction is intentional.
+          </p>
+
+          <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+            Whether it’s a marketing website, a growth-focused mobile app, or a
+            mission-critical digital product, our team blends design, engineering,
+            and strategy to create ecosystems that scale with your business.
+          </p>
+
+          <ul className="space-y-3 mb-8">
+            {[
+              'High-conversion marketing and product websites',
+              'Cross-platform mobile & web applications',
+              'Brand-consistent UX/UI systems and design language',
+              'SEO, performance, and accessibility-first builds',
+            ].map(item => (
+              <li key={item} className="flex items-center text-slate-200">
+                <CheckCircle className="w-5 h-5 text-indigo-500 mr-3" /> {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* HERO IMAGES (MOSAIC) */}
+        <div className="grid grid-cols-2 gap-4 relative">
+          <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=900"
+              alt="Product Website"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl mt-8">
+            <img
+              src={Digital_image1}
+              alt="Mobile Experience"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div className="col-span-2 rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1400"
+              alt="Team Collaborating on Digital Experience"
+              className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 2️⃣ WHAT WE BUILD – WEBSITE / MOBILE / MARKETING / DIGITAL SOLUTIONS */}
+      <section>
+        <div className="flex items-center justify-between mb-10 gap-4">
+          <div>
+            <h2 className="text-indigo-400 font-semibold tracking-wide uppercase text-sm mb-2">
+              What We Build
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-white">
+              End-to-end digital products, not just pages
+            </h3>
+          </div>
+          <p className="hidden md:block text-sm text-slate-400 max-w-md text-right">
+            Every touchpoint is crafted to support your business goals —
+            from acquisition and engagement to retention and advocacy.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-6">
+          {/* Websites */}
+          <div className="glass-card p-6 rounded-2xl flex flex-col justify-between hover:bg-white/5 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                <Globe className="w-5 h-5 text-indigo-400" />
+              </div>
+              <h4 className="text-white font-semibold text-lg">Web Experiences</h4>
+            </div>
+            <p className="text-sm text-slate-400 mb-4">
+              Responsive, fast, and search-optimized websites that position your brand
+              as premium while driving measurable business outcomes.
+            </p>
+            <span className="text-xs uppercase tracking-wide text-slate-500">
+              Corporate · SaaS · Product · Landing Pages
+            </span>
+          </div>
+
+          {/* Mobile Apps */}
+          <div className="glass-card p-6 rounded-2xl flex flex-col justify-between hover:bg-white/5 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                <Cpu className="w-5 h-5 text-indigo-400" />
+              </div>
+              <h4 className="text-white font-semibold text-lg">Mobile & Web Apps</h4>
+            </div>
+            <p className="text-sm text-slate-400 mb-4">
+              Native-feeling mobile and web apps with thoughtful flows, offline
+              support, and integration into your existing stack.
+            </p>
+            <span className="text-xs uppercase tracking-wide text-slate-500">
+              B2B · B2C · Internal Tools
+            </span>
+          </div>
+
+          {/* Marketing */}
+          <div className="glass-card p-6 rounded-2xl flex flex-col justify-between hover:bg-white/5 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                <Code className="w-5 h-5 text-indigo-400" />
+              </div>
+              <h4 className="text-white font-semibold text-lg">Marketing Funnels</h4>
+            </div>
+            <p className="text-sm text-slate-400 mb-4">
+              Campaign-ready pages, lead magnets, and analytics wiring — built to
+              test, learn, and scale your acquisition efforts.
+            </p>
+            <span className="text-xs uppercase tracking-wide text-slate-500">
+              Funnels · Landing Tests · Tracking
+            </span>
+          </div>
+
+          {/* Digital Solutions */}
+          <div className="glass-card p-6 rounded-2xl flex flex-col justify-between hover:bg-white/5 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                <Rocket className="w-5 h-5 text-indigo-400" />
+              </div>
+              <h4 className="text-white font-semibold text-lg">Digital Solutions</h4>
+            </div>
+            <p className="text-sm text-slate-400 mb-4">
+              Custom platforms, portals, and internal tools that unify workflows,
+              automate manual steps, and unlock new business models.
+            </p>
+            <span className="text-xs uppercase tracking-wide text-slate-500">
+              Portals · Dashboards · Internal Platforms
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* 3️⃣ OUR PROCESS – DISCOVER → DESIGN → BUILD → LAUNCH */}
+      <section className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Process Text */}
+        <div>
+          <h2 className="text-indigo-400 font-semibold tracking-wide uppercase text-sm mb-2">
+            Our Approach
+          </h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            A product mindset from day one
+          </h3>
+          <p className="text-slate-400 mb-8 leading-relaxed">
+            We combine discovery, design, engineering, and growth in a single
+            integrated workflow — giving you a partner that thinks beyond launch.
+          </p>
+
+          <div className="space-y-5">
+            {[
+              {
+                step: '01 · Discover',
+                title: 'Understand the brand, user, and business',
+                text: 'Workshops, stakeholder interviews, and user research to clarify what success looks like.'
+              },
+              {
+                step: '02 · Design',
+                title: 'Craft the experience and visual language',
+                text: 'UX flows, high-fidelity UI, and component systems that can scale across products.'
+              },
+              {
+                step: '03 · Build',
+                title: 'Engineer for performance and reliability',
+                text: 'Modern frontends, clean APIs, and secure integrations built with best practices.'
+              },
+              {
+                step: '04 · Launch & Grow',
+                title: 'Ship, measure, and iterate',
+                text: 'Analytics, A/B testing, and continuous optimization to keep you ahead of your market.'
+              }
+            ].map(({ step, title, text }) => (
+              <div key={step} className="flex gap-4">
+                <div className="w-16 text-xs font-semibold text-indigo-400 tracking-wide pt-1">
+                  {step}
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-1">{title}</h4>
+                  <p className="text-sm text-slate-400">{text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Process image */}
+        <div className="relative">
+          <div className="absolute -inset-6 bg-indigo-500/10 blur-3xl rounded-3xl" />
+          <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
+            <img
+              src={Digital_image2}
+              alt="Design and Development Collaboration"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-indigo-300 mb-1">
+                  Enlivo Studio
+                </p>
+                <p className="text-sm text-slate-200">
+                  Product, design, and engineering collaborating in real-time.
+                </p>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700 text-[11px] text-slate-300">
+                From Figma to production in weeks
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4️⃣ OUTCOMES / METRICS SECTION */}
+      <section className="relative rounded-3xl overflow-hidden border border-slate-800 glass-card">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&q=80&w=1600"
+            alt="Analytics and Performance"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70" />
+        </div>
+
+        <div className="relative px-8 py-10 md:px-12 md:py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+          <div className="max-w-xl">
+            <h2 className="text-indigo-300 font-semibold tracking-wide uppercase text-sm mb-2">
+              Outcomes
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Built to convert, scale, and last
+            </h3>
+            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              We don’t ship and disappear. Our experiences are optimized for speed,
+              discoverability, and real-world usage — with analytics wired in so you
+              can see what’s working and what needs to evolve.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4 md:gap-6 min-w-[260px]">
+            <div className="glass-card rounded-2xl px-4 py-3 text-center border border-indigo-500/30">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">2x</div>
+              <p className="text-[11px] uppercase tracking-wide text-indigo-300">
+                Faster load times
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl px-4 py-3 text-center border border-emerald-500/30">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">+40%</div>
+              <p className="text-[11px] uppercase tracking-wide text-emerald-300">
+                Lift in conversions
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl px-4 py-3 text-center border border-sky-500/30">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">99.9%</div>
+              <p className="text-[11px] uppercase tracking-wide text-sky-300">
+                Uptime and reliability
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5️⃣ CTA SECTION */}
+      <section className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to create your next digital flagship?
+        </h2>
+        <p className="text-slate-400 max-w-xl mx-auto mb-8">
+          Share your idea, your product, or your brand vision — we’ll help you turn
+          it into a digital experience that feels premium, performs under pressure,
+          and grows with your business.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button className="px-8 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/40 transition-all">
+            Book a discovery call
+          </button>
+          <button className="px-8 py-3 rounded-full border border-slate-700 hover:border-indigo-500 text-slate-200 hover:text-white font-semibold text-sm bg-slate-900/60 transition-all">
+            View sample case studies
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
 );
+
+
 
 const AboutUsPage = () => (
         <div className="pt-32 pb-20 bg-slate-950 min-h-screen">
@@ -505,13 +792,13 @@ const InternshipPage = ({ setPage }) => (
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h1 className="text-5xl font-bold text-white mb-6">Future-Ready <span className="text-indigo-500">Internship Program</span></h1>
         <p className="text-xl text-slate-400">
-          Open to college students from <span className="text-white font-bold">2nd Year to Final Year</span>. Bridge the gap between academic theory and industry reality.
+          Open to college students for <span className="text-white">all Streams</span>. Bridge the gap between academic theory and industry reality.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12 mb-16">
         <div className="rounded-2xl overflow-hidden border border-slate-800">
-           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" alt="Students Collaboration" className="w-full h-full object-cover" />
+           <img src={Internship_image} alt="Students Collaboration" className="w-full h-full object-cover" />
         </div>
         <div className="space-y-8">
           <div className="flex gap-4">
@@ -568,7 +855,7 @@ const LaunchpadPage = () => (
         <div className="glass-card p-6 rounded-xl text-center">
           <Clock className="w-8 h-8 text-indigo-400 mx-auto mb-3" />
           <div className="font-bold text-white">Duration</div>
-          <div className="text-sm text-slate-400">6 Months Training + 1-2 Yr Support</div>
+          <div className="text-sm text-slate-400">6 Months Training + 1 Yr Support</div>
         </div>
 {/*         <div className="glass-card p-6 rounded-xl text-center">
           <DollarSign className="w-8 h-8 text-green-400 mx-auto mb-3" />
@@ -583,7 +870,7 @@ const LaunchpadPage = () => (
         <div className="glass-card p-6 rounded-xl text-center">
           <Award className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
           <div className="font-bold text-white">Promise</div>
-          <div className="text-sm text-slate-400">10 Guaranteed Interviews</div>
+          <div className="text-sm text-slate-400">5 Guaranteed Interviews</div>
         </div>
       </div>
 
@@ -639,7 +926,7 @@ const LaunchpadPage = () => (
                </div>
                <div className="glass-card p-6 rounded-xl border border-indigo-500/50">
                  <CheckCircle className="w-8 h-8 text-green-400 mb-3" />
-                 <h4 className="text-white font-bold mb-2">10 Interview Guarantee</h4>
+                 <h4 className="text-white font-bold mb-2">5 Interview Guarantee</h4>
                  <p className="text-slate-400 text-sm">We connect you with a minimum of 10 confirmed job interviews with partner companies.</p>
                </div>
                <div className="glass-card p-6 rounded-xl">
@@ -859,6 +1146,7 @@ const ContactPage = () => {
               <div>
                 <h4 className="text-white font-bold text-lg">Call Us (India)</h4>
                 <p className="text-indigo-300 font-mono text-sm">+91 89713 63921</p>
+                <p className="text-indigo-300 font-mono text-sm">+91 77278 67878</p>
               </div>
             </a>
             
@@ -881,7 +1169,7 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-slate-800/50 pt-8 text-center">
             <div className="flex items-center gap-3 justify-center text-slate-400">
               <Mail className="w-5 h-5 text-indigo-400" />
-              <span>hello@enlivo.com</span>
+              <span>info.enlivo@gmail.com</span>
             </div>
             <div className="flex items-center gap-3 justify-center text-slate-400">
               <MapPin className="w-5 h-5 text-indigo-400" />
@@ -958,7 +1246,7 @@ const Footer = ({ setPage }) => {
               <li><button onClick={() => setPage('aboutus')} className="hover:text-indigo-400 transition-colors">About Us</button></li>
              <li><button onClick={() => setPage('contact')} className="hover:text-indigo-400 transition-colors">Contact Us</button></li>
 {/*              <li><button className="hover:text-indigo-400 transition-colors">Careers</button></li> */}
-             <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hello@enlivo.com</li>
+             <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> info.enlivo@gmail.com</li>
              <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Bengaluru, India</li>
           </ul>
         </div>
@@ -1019,11 +1307,22 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const setPage = (page) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setCurrentPage(page);
-    setIsMobileMenuOpen(false);
-  };
+//   const setPage = (page) => {
+//     window.scrollTo({ top: 0, behavior: 'smooth' });
+//     setCurrentPage(page);
+//     setIsMobileMenuOpen(false);
+//   };
+
+const setPage = (page) => {
+  setCurrentPage(page);
+  setIsMobileMenuOpen(false);
+
+  // scroll after state updates
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 50);
+};
+
 
   return (
     <div className="bg-slate-950 min-h-screen font-sans selection:bg-indigo-500/30">
